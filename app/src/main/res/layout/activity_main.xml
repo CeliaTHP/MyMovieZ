@@ -49,9 +49,9 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
+        android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="39dp" />
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

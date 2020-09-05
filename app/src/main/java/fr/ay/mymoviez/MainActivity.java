@@ -22,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    Intent otherActivity = new Intent(getApplicationContext(), Listing.class);
+                Intent otherActivity = new Intent(getApplicationContext(), Listing.class);
                 startActivity(otherActivity);
                 finish();
 
             }
         });
+
+
     }
 }
