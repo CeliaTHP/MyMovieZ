@@ -51,7 +51,6 @@ public class InfoAdapter extends BaseAdapter {
         String movieDate = currentInfo.getDate();
         String movieSyn = currentInfo.getSyn();
 
-
         //get view and update title
         TextView movieNameView = view.findViewById(R.id.titleview);
         movieNameView.setText(movieTitle);
@@ -63,6 +62,8 @@ public class InfoAdapter extends BaseAdapter {
         //get view and update synopsis
         TextView movieSynView = view.findViewById(R.id.synview);
         movieSynView.setText(movieSyn);
+
+
 
 
 
