@@ -60,7 +60,7 @@ public class Listing extends AppCompatActivity {
         movieInfoList.add(new MovieInfo("Cyber James Bond","Literally James Bond...but with a PROJECT skin ! ", "00-007-2007"));
         movieInfoList.add(new MovieInfo("Moana","What can I say except your welcome ! ", "02-30-2018"));
         movieInfoList.add(new MovieInfo("Dracula","Need mooar blood AHAHAHAHAHHAHAHHAAHAHAHAHAAAHAHAHA", "10-30-1953"));
-        movieInfoList.add(new MovieInfo("NeverendingTitlelikeveryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyylong","Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis ", "10-30-1953"));
+        movieInfoList.add(new MovieInfo("NeverendingTitlelikeveryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyylong","Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis ", "10-30-195333"));
         movieInfoList.add(new MovieInfo("La La Land 2 ",   "Another day of sun is coming on La La Land", "12-06-2024"));
 
 
