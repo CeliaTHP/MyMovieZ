@@ -32,6 +32,7 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -44,6 +45,14 @@ public class Listing extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        int num = 0;
+
+       String url = " https://api.themoviedb.org/3/movie/550?api_key=e4a9d54204f8ee1d8121e867e9a8a5a5";
+
+      //  String url = "https://api.themoviedb.org/3/movie/" + num +
+        //        "550?api_key=e4a9d54204f8ee1d8121e867e9a8a5a5";
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listing);
 
@@ -53,8 +62,44 @@ public class Listing extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
+
+
+        //fill listview with api
+
+
+       //for(num = 541; num < 10; num++ ) {
+
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null
+                    , new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    TextView titleView = findViewById(R.id.titleview);
+                    TextView synView = findViewById(R.id.synview);
+                    TextView dateView = findViewById(R.id.dateview);
+                    try {
+                        titleView.setText("Title : " + response.getString("title"));
+                        synView.setText("Synopsis : " + response.getString("overview"));
+                        dateView.setText(response.getString("release_date"));
+                        /*
+                        String newTitle = response.getString("title");
+                        String newDate = response.getString("release_date");
+                        String newSyn = response.getString("overview");*/
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                }
+            });
+            requestQueue.add(request);
+
+
         //list of infos
-        List<MovieInfo>  movieInfoList = new ArrayList<>();
+        List<MovieInfo> movieInfoList = new ArrayList<>();
         movieInfoList.add(new MovieInfo("Best Movie World","C'est la fin du monde omg où sont les super zéros call 007", "29-02-2023"));
         movieInfoList.add(new MovieInfo("La La Land",   "City of stars... are your shining just for me ? ", "12-06-2018"));
         movieInfoList.add(new MovieInfo("Cyber James Bond","Literally James Bond...but with a PROJECT skin ! ", "00-007-2007"));
@@ -63,13 +108,15 @@ public class Listing extends AppCompatActivity {
         movieInfoList.add(new MovieInfo("NeverendingTitlelikeveryyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyylong","Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis Verylongsynopsis ", "10-30-195333"));
         movieInfoList.add(new MovieInfo("La La Land 2 ",   "Another day of sun is coming on La La Land", "12-06-2024"));
 
-
-
+      //  movieInfoList.add(new MovieInfo(findViewById(R.id.titleview).toString(), findViewById(R.id.dateview).toString(), findViewById(R.id.synview).toString()));
 
         //get list view
-        ListView movieListView = findViewById(R.id.movie_list_view);
-        movieListView.setAdapter(new InfoAdapter(this,movieInfoList));
+       ListView movieListView = findViewById(R.id.movie_list_view);
+       movieListView.setAdapter(new InfoAdapter(this,movieInfoList));
 
+
+
+        //next activity custom moviepage
 
         movieListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
