@@ -9,6 +9,7 @@
     <string name="info_title">Titre</string>
     <string name="info_date">Date</string>
     <string name="info_syn">Synopsis</string>
+    <string name="btn_txt">+ d\'infos</string>
 
 
 </resources>
